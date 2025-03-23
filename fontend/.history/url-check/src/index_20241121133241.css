@@ -1,0 +1,15 @@
+/* index.css */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1a1a2e; /* Màu nền */
+  color: #d3d3d3; /* Màu chữ */
+}
+
+* {
+  box-sizing: border-box;
+}

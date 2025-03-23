@@ -1,0 +1,119 @@
+const URLs = () => {
+  const styles = {
+    container: {
+      textAlign: "center",
+      backgroundColor: "#1a1a2e",
+      color: "#d3d3d3",
+      padding: "2rem",
+      width: "60%",
+      margin: "0 auto",
+    },
+    icon: {
+      fontSize: "4rem",
+      color: "#87cefa",
+      marginBottom: "1rem",
+    },
+    inputWrapper: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      marginBottom: "1.5rem",
+    },
+    textField: {
+      width: "70%",
+      padding: "0.5rem",
+      fontSize: "1rem",
+      borderRadius: "5px 0 0 5px",
+      border: "1px solid #444",
+      backgroundColor: "#2e2e4d",
+      color: "#d3d3d3",
+      outline: "none",
+    },
+    scanButton: {
+      padding: "10px 20px",
+      fontSize: "17px",
+      fontWeight: "bold",
+      border: "2px solid purple",
+      backgroundColor: "transparent",
+      color: "purple",
+      cursor: "pointer",
+      position: "relative",
+      transition: "all 1s",
+      overflow: "hidden",
+      borderRadius: "0 5px 5px 0",
+    },
+    scanButtonHover: {
+      color: "white",
+    },
+    scanButtonBefore: {
+      content: '""',
+      position: "absolute",
+      height: "100%",
+      width: "0%",
+      top: "0",
+      left: "-40px",
+      transform: "skewX(45deg)",
+      backgroundColor: "purple",
+      zIndex: "-1",
+      transition: "all 1s",
+    },
+    scanButtonHoverBefore: {
+      width: "160%",
+    },
+    description: {
+      fontSize: "0.9rem",
+      color: "#b0b0c3",
+      lineHeight: "1.5",
+    },
+    link: {
+      color: "#87cefa",
+      textDecoration: "none",
+    },
+  };
+
+  return (
+    <div style={styles.container}>
+      <div style={styles.icon}>
+        <i className="fas fa-globe"></i> {/* Biểu tượng icon */}
+      </div>
+      <div style={styles.inputWrapper}>
+        <input
+          type="text"
+          placeholder="Search or scan a URL"
+          style={styles.textField}
+        />
+        <button
+          style={styles.scanButton}
+          onMouseOver={(e) => {
+            e.target.style.color = styles.scanButtonHover.color;
+            e.target.querySelector("::before").style.width = "160%";
+          }}
+          onMouseOut={(e) => {
+            e.target.style.color = "purple";
+            e.target.querySelector("::before").style.width = "0%";
+          }}
+        >
+          Scan
+        </button>
+      </div>
+      <p style={styles.description}>
+        By submitting data above, you are agreeing to our{" "}
+        <a href="#" style={styles.link}>
+          Terms of Service
+        </a>{" "}
+        and{" "}
+        <a href="#" style={styles.link}>
+          Privacy Notice
+        </a>
+        , and to the <strong>sharing of your URL submission</strong> with the
+        security community. Please do not submit any personal information; we
+        are not responsible for the contents of your submission.{" "}
+        <a href="#" style={styles.link}>
+          Learn more.
+        </a>
+      </p>
+    </div>
+  );
+};
+
+export default URLs;

@@ -1,0 +1,159 @@
+import Navbar from "../Components/Navbar";
+import bgImage from "../assets/background.jpg"; // Đường dẫn tới ảnh nền
+
+const Home = () => {
+  // Inline styles
+  const styles = {
+    body: {
+      fontFamily: "Arial, sans-serif",
+      backgroundImage: `url(${bgImage})`, // Đặt ảnh nền
+      backgroundSize: "cover", // Phủ toàn bộ màn hình
+      backgroundPosition: "center", // Căn giữa ảnh nền
+      backgroundRepeat: "no-repeat", // Không lặp ảnh nền
+      height: "100vh", // Chiều cao cố định toàn màn hình
+      width: "100%", // Chiều rộng toàn màn hình
+      display: "flex", // Sử dụng Flexbox để căn giữa
+      flexDirection: "column", // Sắp xếp theo chiều dọc
+      justifyContent: "center", // Căn giữa theo trục dọc
+      alignItems: "center", // Căn giữa theo trục ngang
+      padding: "2rem",
+      paddingTop: "170px", // Đảm bảo nội dung nằm dưới Navbar
+      boxSizing: "border-box", // Bao gồm padding trong chiều cao
+      margin: "0", // Loại bỏ margin mặc định
+      overflow: "hidden", // Không cho phép cuộn
+    },
+    logo: {
+      fontSize: "2.5rem",
+      color: "#fff", // Đặt màu chữ tương phản với nền
+      fontWeight: "bold",
+      marginBottom: "0.5rem",
+    },
+    tagline: {
+      fontSize: "1rem",
+      lineHeight: "1.5",
+      color: "#f0f0f0",
+      marginBottom: "2rem",
+    },
+    tabMenu: {
+      display: "flex",
+      justifyContent: "center",
+      gap: "2rem",
+      marginBottom: "2rem",
+    },
+    tab: {
+      fontSize: "1rem",
+      padding: "0.5rem 1rem",
+      background: "none",
+      color: "#fff",
+      border: "none",
+      cursor: "pointer",
+      transition: "color 0.3s",
+    },
+    activeTab: {
+      borderBottom: "2px solid #fff",
+      color: "#fff",
+    },
+    uploadSection: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      marginBottom: "2rem",
+    },
+    uploadIcon: {
+      width: "100px",
+      height: "100px",
+      border: "2px dashed #fff",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      marginBottom: "1rem",
+      borderRadius: "10px",
+    },
+    chooseFileButton: {
+      padding: "0.7rem 1.5rem",
+      border: "none",
+      backgroundColor: "#fff",
+      color: "#1a1a2e",
+      fontSize: "1rem",
+      cursor: "pointer",
+      borderRadius: "5px",
+      transition: "background-color 0.3s",
+    },
+    footer: {
+      fontSize: "0.8rem",
+      lineHeight: "1.5",
+      color: "#f0f0f0",
+      marginTop: "auto", // Đẩy footer xuống cuối màn hình
+      textAlign: "center",
+    },
+    link: {
+      color: "#87cefa",
+      textDecoration: "none",
+    },
+  };
+
+  return (
+    <>
+      <Navbar />
+      <div style={styles.body}>
+        <header>
+          <div style={styles.logo}>VIRUSTOTAL</div>
+          <p style={styles.tagline}>
+            Analyse suspicious files, domains, IPs, and URLs to detect malware
+            and other breaches, automatically share them with the security
+            community.
+          </p>
+        </header>
+
+        <div style={styles.tabMenu}>
+          <button style={{ ...styles.tab, ...styles.activeTab }}>FILE</button>
+          <button style={styles.tab}>URL</button>
+          <button style={styles.tab}>SEARCH</button>
+        </div>
+
+        <div style={styles.uploadSection}>
+          <div style={styles.uploadIcon}>
+            <i className="fingerprint-icon"></i>
+          </div>
+          <button style={styles.chooseFileButton}>Choose file</button>
+        </div>
+
+        <footer style={styles.footer}>
+          <p>
+            By submitting data above, you are agreeing to our{" "}
+            <a href="#" style={styles.link}>
+              Terms of Service
+            </a>{" "}
+            and{" "}
+            <a href="#" style={styles.link}>
+              Privacy Notice
+            </a>
+            , and to the <strong>sharing of your sample submission</strong> with
+            the security community. Please do not submit any personal
+            information; we are not responsible for the contents of your
+            submission.{" "}
+            <a href="#" style={styles.link}>
+              Learn more.
+            </a>
+          </p>
+          <p>
+            <a href="#" style={styles.link}>
+              Want to automate submissions?
+            </a>{" "}
+            Check our{" "}
+            <a href="#" style={styles.link}>
+              API
+            </a>
+            , or access your{" "}
+            <a href="#" style={styles.link}>
+              API key
+            </a>
+            .
+          </p>
+        </footer>
+      </div>
+    </>
+  );
+};
+
+export default Home;
